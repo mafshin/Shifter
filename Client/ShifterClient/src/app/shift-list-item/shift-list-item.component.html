@@ -1,0 +1,13 @@
+<div class="card card-block ml-auto floating-card">
+
+
+  <div class="card-header bg-info text-white">{{day.date | date:'fullDate'}}
+  </div>
+
+  <div class="card-body row">
+    <div *ngFor="let shift of day.shifts" class="col-sm">      
+      <div>Shift {{shift.number}}</div>
+      <h5>{{shift.person}}</h5>
+    </div>
+  </div>
+</div>
