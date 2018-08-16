@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using Shifter.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,19 +11,26 @@ namespace PlanIt.Model
     {
         private readonly IRuleProvider ruleProvider;
 
-        public RuleEngine(IRuleProvider ruleProvider)
+        public RuleEngine(IRuleProvider ruleProvider, ILogger logger)
         {
             this.ruleProvider = ruleProvider;
-        }        
-        public bool CheckRules(IEnumerable<WorkShift> workShifts)
+            Logger = logger;
+        }
+
+        public ILogger Logger { get; }
+
+        public bool CheckRules(IEnumerable<Person> persons, IEnumerable<WorkShift> workShifts, ApplyStage stage)
         {
             var finalResult = true;
+            var rules = ruleProvider.GetRules().Where(x => x.ApplyStages.HasFlag(stage));
 
-            foreach (var rule in ruleProvider.GetRules())
+            Logger.LogInformation($"Checking {stage} stage rules with stage ...");
+
+            foreach (var rule in rules)
             {
-                var result = rule.CheckRule(workShifts);
+                var result = rule.CheckRule(persons, workShifts);
 
-                Logger.Log($"Checking rule {rule.GetType()}: {result}");
+                Logger.LogInformation($"Checking rule {rule.GetType()}: {result}");
 
                 finalResult &= result;
 

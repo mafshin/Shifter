@@ -31,6 +31,7 @@ namespace Shifter.Controllers
         {
             ShiftSettings settings = new ShiftSettings()
             {
+                MaxPlanRun = 100000,
                 ScheduleDaysCount = 14,
                 ShiftsPerDay = 2
             };
@@ -61,7 +62,11 @@ namespace Shifter.Controllers
                 new Person() { FirstName = "Wiliam", LastName = "Robinson"},
                 new Person() { FirstName = "Zahed", LastName = "Mahdi"},
                 new Person() { FirstName = "John", LastName = "Tedd"},
-                new Person() { FirstName = "Jack", LastName = "Noman"}
+                new Person() { FirstName = "Jack", LastName = "Noman"},
+                new Person() { FirstName = "Sara", LastName = "Vanderov"},
+                new Person() { FirstName = "Aida", LastName = "Miladi"},
+                new Person() { FirstName = "Steve", LastName = "Jobs"},
+                new Person() { FirstName = "Jeff", LastName = "Ritcher"}
             });
 
             return list;

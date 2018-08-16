@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Debug;
 using Microsoft.Extensions.Options;
 using PlanIt.Model;
 
@@ -24,7 +25,9 @@ namespace Shifter
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IRuleEngine>((isp) => new RuleEngine(new StaticRuleProvider()));
+            var logger = new DebugLogger("Shifter");
+            services.AddSingleton<ILogger>((isp) => logger);
+            services.AddSingleton<IRuleEngine>((isp) => new RuleEngine(new StaticRuleProvider(), logger));
             services.AddCors();
             services.AddMvc();
             

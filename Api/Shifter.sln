@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shifter", "Shifter\Shifter.csproj", "{F6DFD200-C126-4DB5-AA43-DB6AD5ED2FFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shifter", "Shifter\Shifter.csproj", "{F6DFD200-C126-4DB5-AA43-DB6AD5ED2FFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{164B2F7E-BB00-4594-B2F2-A7DD1DC369A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{C6082832-104E-464A-A32D-2C46CF71BFDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{F6DFD200-C126-4DB5-AA43-DB6AD5ED2FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6DFD200-C126-4DB5-AA43-DB6AD5ED2FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6DFD200-C126-4DB5-AA43-DB6AD5ED2FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6082832-104E-464A-A32D-2C46CF71BFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6082832-104E-464A-A32D-2C46CF71BFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6082832-104E-464A-A32D-2C46CF71BFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6082832-104E-464A-A32D-2C46CF71BFDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6082832-104E-464A-A32D-2C46CF71BFDA} = {164B2F7E-BB00-4594-B2F2-A7DD1DC369A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1114F4E8-673B-41B2-B7C7-EC2535E484E1}
