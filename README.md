@@ -6,7 +6,7 @@ A web application for management of work shifts
 
 Server: ASP.NET Core Api
 
-Client: Angular 6
+Client: Angular 6, Bootstrap 
 
 ## CI/CD
 Source: Github
